@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA 6 VIRAL STUDIO</title>
+<style>
+body {
+  margin: 0;
+  padding: 20px;
+  background: #101018;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+h1 {
+  color: #a78bfa;
+  text-align: center;
+}
+p { color: #ccc; }
+input, select, button {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+}
+button {
+  background: #8055e8;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+#resultado {
+  background: #20202d;
+  padding: 15px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🎮 GTA 6 VIRAL STUDIO</h1>
+<p>Tu estudio gratuito de contenido viral.</p>
+
+<h3>Generador de Shorts</h3>
+
+<input id="tema" placeholder="Escribe el tema del vídeo">
+
+<select id="tipo">
+<option value="curiosidad">Curiosidades y secretos</option>
+<option value="noticia">Noticias de GTA 6</option>
+<option value="teoria">Teorías y misterios</option>
+</select>
+
+<button onclick="generar()">GENERAR GUION VIRAL</button>
+
+<div id="resultado">
+Tu guion aparecerá aquí.
+</div>
+
+<button onclick="copiar()">COPIAR GUION</button>
+
+</div>
+
+<script>
+function generar() {
+  const tema = document.getElementById("tema").value.trim();
+  const tipo = document.getElementById("tipo").value;
+
+  if (!tema) {
+    alert("Escribe primero un tema.");
+    return;
+  }
+
+  let inicio = "";
+  let desarrollo = "";
+
+  if (tipo === "curiosidad") {
+    inicio = "¿Sabías que hay algo sobre GTA 6 que quizás no conocías?";
+    desarrollo = "Hoy descubrimos esta curiosidad: " + tema;
+  } else if (tipo === "noticia") {
+    inicio = "¡Atención, fans de GTA 6!";
+    desarrollo = "Vamos a hablar de esta novedad: " + tema +
+    ". Comprueba siempre la fuente y la fecha antes de publicar.";
+  } else {
+    inicio = "¿Y si todo lo que sabemos sobre GTA 6 fuera solo una parte de la historia?";
+    desarrollo = "Esta teoría plantea lo siguiente: " + tema;
+  }
+
+  const guion =
+  "🎬 GTA 6 VIRAL STUDIO\n\n" +
+  "🔥 GANCHO:\n" + inicio + "\n\n" +
+  "🎮 DESARROLLO:\n" + desarrollo + "\n\n" +
+  "🚀 FINAL:\n" +
+  "¿Qué opinas? Déjalo en los comentarios y sígueme para más contenido de GTA 6.\n\n" +
+  "#GTA6 #GTAVI #Gaming #Shorts";
+
+  document.getElementById("resultado").textContent = guion;
+}
+
+function copiar() {
+  const texto = document.getElementById("resultado").textContent;
+  navigator.clipboard.writeText(texto)
+    .then(() => alert("¡Guion copiado!"))
+    .catch(() => alert("No se pudo copiar. Selecciona el texto manualmente."));
+}
+</script>
+
+</body>
+</html>
