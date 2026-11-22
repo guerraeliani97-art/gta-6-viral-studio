@@ -4,21 +4,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GTA 6 VIRAL STUDIO 2.0</title>
+<title>GTA 6 VIRAL STUDIO 3.0</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;padding:20px;background:#090914;color:white;font-family:Arial,sans-serif}
+body{margin:0;padding:18px;background:#090914;color:white;font-family:Arial,sans-serif}
 .container{max-width:650px;margin:auto}
-header{text-align:center;padding:25px 10px;background:linear-gradient(135deg,#24104a,#10152e);border:1px solid #7545c5;border-radius:18px}
+header{text-align:center;padding:25px 12px;background:linear-gradient(135deg,#24104a,#10152e);border:1px solid #7545c5;border-radius:20px}
 h1{color:#bd8aff;font-size:27px}
 .sub{color:#bbb}
-.card{background:#171729;border:1px solid #34304e;border-radius:15px;padding:18px;margin-top:17px}
+.card{background:#171729;border:1px solid #34304e;border-radius:16px;padding:18px;margin-top:17px}
 h2{color:#c49aff;font-size:19px}
 label{display:block;margin:14px 0 7px}
-input,select,textarea{width:100%;padding:13px;background:#0c0c1a;color:white;border:1px solid #51436d;border-radius:9px;font-size:15px}
-button{width:100%;padding:14px;margin-top:12px;background:#853fe0;color:white;border:0;border-radius:10px;font-weight:bold;font-size:15px;cursor:pointer}
-button.secondary{background:#34304e}
-#resultado{white-space:pre-wrap;line-height:1.6;background:#0b0b18;border:1px solid #51436d;padding:15px;border-radius:10px;margin-top:15px;min-height:100px}
+input,select,textarea{width:100%;padding:14px;background:#0c0c1a;color:white;border:1px solid #51436d;border-radius:10px;font-size:15px}
+textarea{min-height:90px}
+button{width:100%;padding:15px;margin-top:12px;background:#853fe0;color:white;border:0;border-radius:10px;font-size:16px;font-weight:bold}
+.result{white-space:pre-wrap;line-height:1.6;background:#0b0b18;border:1px solid #51436d;padding:15px;border-radius:10px;margin-top:15px}
+.small{color:#aaa;font-size:12px}
 footer{text-align:center;color:#888;font-size:12px;margin:25px}
 </style>
 </head>
@@ -27,36 +28,36 @@ footer{text-align:center;color:#888;font-size:12px;margin:25px}
 
 <header>
 <h1>🎬 GTA 6 VIRAL STUDIO</h1>
-<p class="sub">Tu estudio gratuito de creación de contenido</p>
-<strong>VERSIÓN 2.0</strong>
+<p class="sub">Tu estudio de creación de contenido viral</p>
+<strong>VERSIÓN 3.0</strong>
 </header>
 
 <div class="card">
 <h2>💡 1. Generador de ideas virales</h2>
-<label>Temática</label>
+<label>Elige una temática</label>
 <select id="categoria">
-<option value="GTA 6">GTA 6: secretos y novedades</option>
-<option value="Curiosidades">Curiosidades sorprendentes</option>
-<option value="Misterios">Misterios sin resolver</option>
-<option value="Tecnología">Tecnología y descubrimientos</option>
-<option value="Historia">Historia y datos increíbles</option>
+<option>Secretos y novedades de GTA 6</option>
+<option>Curiosidades sorprendentes</option>
+<option>Misterios sin resolver</option>
+<option>Teorías de GTA 6</option>
+<option>Personajes y protagonistas</option>
+<option>Mapa y localizaciones</option>
+<option>Comparaciones GTA 5 vs GTA 6</option>
 </select>
 <button onclick="ideas()">GENERAR IDEAS</button>
-<div id="ideasResultado"></div>
+<div id="ideasResultado" class="result">Tus ideas aparecerán aquí.</div>
 </div>
 
 <div class="card">
 <h2>✍️ 2. Generador de guiones</h2>
 <label>Tema del vídeo</label>
-<input id="tema" placeholder="Ej. Los secretos de GTA 6">
-
+<input id="tema" placeholder="Ej. Misterios de Vice City">
 <label>Duración</label>
 <select id="duracion">
-<option value="30">30 segundos</option>
-<option value="60">60 segundos</option>
-<option value="90">90 segundos</option>
+<option>30 segundos</option>
+<option>60 segundos</option>
+<option>90 segundos</option>
 </select>
-
 <label>Estilo</label>
 <select id="estilo">
 <option>Intrigante</option>
@@ -65,6 +66,7 @@ footer{text-align:center;color:#888;font-size:12px;margin:25px}
 <option>Misterioso</option>
 </select>
 <button onclick="guion()">GENERAR GUION VIRAL</button>
+<div id="guionResultado" class="result">Aquí aparecerá tu guion.</div>
 </div>
 
 <div class="card">
@@ -72,123 +74,105 @@ footer{text-align:center;color:#888;font-size:12px;margin:25px}
 <label>Tema del vídeo</label>
 <input id="temaTitulo" placeholder="Escribe el tema">
 <button onclick="titulos()">GENERAR TÍTULOS</button>
-<div id="titulosResultado"></div>
+<div id="tituloResultado" class="result">Tus títulos aparecerán aquí.</div>
 </div>
 
 <div class="card">
 <h2>📰 4. Generador de noticias</h2>
-<p class="sub">Prepara una estructura para presentar noticias verificadas.</p>
+<p class="sub">Crea guiones a partir de información que hayas comprobado.</p>
 <label>Noticia o acontecimiento</label>
-<textarea id="noticia" rows="3" placeholder="Pega aquí una noticia o sus datos verificados"></textarea>
+<textarea id="noticia" placeholder="Pega aquí la noticia y sus datos verificados"></textarea>
+<label>Fuente o enlace</label>
+<input id="fuente" placeholder="Fuente oficial o enlace">
 <button onclick="noticias()">CREAR GUION DE NOTICIA</button>
+<div id="noticiaResultado" class="result">Aquí aparecerá el guion.</div>
 </div>
 
 <div class="card">
-<h2>📋 Resultado de tu creación</h2>
-<div id="resultado">Aquí aparecerá tu guion o contenido.</div>
-<button onclick="copiar()">📋 COPIAR CONTENIDO</button>
-<button class="secondary" onclick="limpiar()">BORRAR RESULTADO</button>
+<h2>🎨 5. Generador de prompts visuales</h2>
+<label>Escena que quieres crear</label>
+<input id="escena" placeholder="Ej. Vice City de noche">
+<label>Formato</label>
+<select id="formato">
+<option>Vertical 9:16 para Shorts</option>
+<option>Horizontal 16:9 para YouTube</option>
+</select>
+<button onclick="prompts()">GENERAR PROMPT</button>
+<div id="promptResultado" class="result">Aquí aparecerá tu prompt.</div>
 </div>
 
-<footer>GTA 6 VIRAL STUDIO © 2026<br>Creado para creadores de contenido</footer>
+<div class="card">
+<h2>📋 Resultado para copiar</h2>
+<div id="resultado" class="result">Tus creaciones aparecerán aquí.</div>
+<button onclick="copiar()">COPIAR RESULTADO</button>
+<p class="small">Herramienta gratuita. No necesita tarjeta ni servicios externos.</p>
+</div>
+
+<footer>GTA 6 VIRAL STUDIO · VERSIÓN 3.0</footer>
 </div>
 
 <script>
-function mostrar(texto){
-document.getElementById("resultado").textContent=texto;
+function mostrar(id,contenido){
+document.getElementById(id).textContent=contenido;
+document.getElementById("resultado").textContent=contenido;
 }
 
 function ideas(){
-const cat=document.getElementById("categoria").value;
-const listas={
-"GTA 6":[
-"10 secretos que podrías haber pasado por alto",
-"Detalles ocultos que generan preguntas",
-"Lo que sabemos y lo que todavía es un misterio",
-"5 teorías que merecen ser investigadas",
-"Comparación entre GTA 5 y GTA 6"
-],
-"Curiosidades":[
-"5 datos que parecen mentira pero son reales",
-"El origen sorprendente de algo cotidiano",
-"Un descubrimiento que pocos conocen",
-"3 curiosidades que te dejarán pensando",
-"El dato más extraño de la historia"
-],
-"Misterios":[
-"Un misterio que sigue sin explicación",
-"Un lugar lleno de preguntas",
-"Una historia que todavía sorprende",
-"Las teorías más conocidas sobre un caso",
-"Un enigma que merece investigarse"
-],
-"Tecnología":[
-"Inventos que parecen del futuro",
-"Cómo funciona una tecnología sorprendente",
-"Descubrimientos que pueden cambiar el mundo",
-"5 avances tecnológicos increíbles",
-"Lo que la inteligencia artificial puede hacer"
-],
-"Historia":[
-"Un acontecimiento que cambió la historia",
-"Personajes históricos poco conocidos",
-"Errores históricos sorprendentes",
-"5 datos históricos que pocos conocen",
-"El origen de una costumbre"
-]};
-let lista=listas[cat];
-document.getElementById("ideasResultado").innerHTML="";
-mostrar("IDEAS PARA "+cat.toUpperCase()+"\n\n"+lista.map((x,i)=>(i+1)+". "+x).join("\n")+"\n\nInvestiga y verifica los datos antes de publicar.");
+let c=document.getElementById("categoria").value;
+let listas={
+"Secretos y novedades de GTA 6":["Detalles ocultos en los tráileres oficiales","Qué sabemos del mundo de Vice City","Novedades confirmadas del desarrollo","Detalles que quizá pasaste por alto","Funciones que los fans esperan"],
+"Curiosidades sorprendentes":["Detalles visuales de GTA 6","Referencias a juegos anteriores","Curiosidades sobre Lucia y Jason","La evolución de Vice City","Detalles del mundo abierto"],
+"Misterios sin resolver":["Misterios de los tráileres","Lugares que generan preguntas","Detalles que los fans investigan","Elementos todavía sin explicación","Preguntas sobre el mapa"],
+"Teorías de GTA 6":["Teorías sobre la historia","Qué podría ocurrir con Jason","Posibles conexiones con GTA 5","Teorías sobre Vice City","Qué podría esconder el mapa"],
+"Personajes y protagonistas":["Quién es Lucia","Qué sabemos de Jason","Personajes secundarios","Relación entre protagonistas","Personajes que regresan"],
+"Mapa y localizaciones":["Vice City y sus referencias","Zonas que aparecen en los tráileres","Paisajes y lugares interesantes","Detalles del entorno","Posibles zonas del mapa"],
+"Comparaciones GTA 5 vs GTA 6":["Evolución gráfica","Diferencias entre ciudades","Cambios en los personajes","Evolución de los vehículos","Diferencias conocidas"]
+};
+let a=listas[c]||listas["Secretos y novedades de GTA 6"];
+let r="💡 5 IDEAS PARA TU CANAL\n\n"+a.map((x,i)=>(i+1)+". "+x).join("\n\n")+"\n\nNota: investiga cada tema antes de presentarlo como un hecho.";
+mostrar("ideasResultado",r);
 }
 
 function guion(){
-let tema=document.getElementById("tema").value.trim();
-let dur=Number(document.getElementById("duracion").value);
-let estilo=document.getElementById("estilo").value;
-if(!tema){alert("Escribe primero el tema del vídeo.");return;}
-let desarrollo=dur===30?
-"Primero, descubre por qué este tema está llamando la atención. Después, fíjate en el detalle más interesante. Y ahora viene la pregunta: ¿qué opinas tú?":
-dur===60?
-"Para entenderlo, tenemos que mirar los detalles. Hay varios aspectos que merece la pena conocer. Primero, el contexto. Segundo, los datos más importantes. Y tercero, aquello que hace que esta historia sea tan interesante. No te quedes solamente con el titular: investiga y descubre todos los detalles.":
-"Vamos a profundizar en esta historia. Primero, conozcamos el contexto. Después, revisemos los datos y detalles más importantes. Hay varios aspectos que merecen atención y que ayudan a comprender mejor el tema. También existen preguntas que todavía necesitan respuestas. Lo importante es separar los hechos comprobados de las teorías. Y ahora que conoces todos estos detalles, quiero saber qué piensas.";
-let texto="🎬 GUION PARA SHORT\n\nTEMA: "+tema+"\nESTILO: "+estilo+"\nDURACIÓN OBJETIVO: "+dur+" segundos\n\n🎯 GANCHO:\n¿Sabías que hay algo sobre "+tema+" que podría sorprenderte? Quédate hasta el final.\n\n🎙️ DESARROLLO:\n"+desarrollo+"\n\n🔥 CIERRE:\n¿Conocías este dato? Déjame tu opinión en los comentarios y sígueme para descubrir más.\n\n📝 NOTA: Este es un borrador creativo. Comprueba los hechos y ajusta el texto al tiempo real de locución.";
-mostrar(texto);
+let t=document.getElementById("tema").value.trim();
+if(!t){alert("Escribe el tema del vídeo");return;}
+let d=document.getElementById("duracion").value;
+let e=document.getElementById("estilo").value;
+let r="🎬 GUION PARA SHORT\n\nTEMA: "+t+"\nESTILO: "+e+"\nDURACIÓN: "+d+"\n\n🎯 GANCHO:\n¿Crees que ya lo sabes todo sobre GTA 6? Hoy vamos a hablar de algo que merece tu atención: "+t+".\n\n🎙️ DESARROLLO:\nPrimero, vamos a conocer qué información existe sobre este tema. Después, descubriremos los detalles más interesantes y por qué están dando tanto que hablar entre los fans.\n\n🔥 CIERRE:\n¿Qué opinas tú? ¿Crees que hay algo más por descubrir? Déjamelo en comentarios y sígueme para más secretos de GTA 6.\n\n📝 IMPORTANTE:\nAñade datos concretos y comprobados antes de publicar. Este guion es una estructura creativa, no una fuente de información.";
+mostrar("guionResultado",r);
 }
 
 function titulos(){
-let tema=document.getElementById("temaTitulo").value.trim();
-if(!tema){alert("Escribe un tema.");return;}
-mostrar("🔥 TÍTULOS PARA TU VÍDEO\n\n"+
-"1. ¡Esto sobre "+tema+" te sorprenderá!\n"+
-"2. El detalle que pocos conocen de "+tema+"\n"+
-"3. ¿Conocías este secreto de "+tema+"?\n"+
-"4. Lo que debes saber sobre "+tema+"\n"+
-"5. La verdad detrás de "+tema+"\n\n"+
-"📌 HASHTAGS\n#Shorts #TikTok #Curiosidades #VideosVirales #"+tema.replace(/[^a-zA-Z0-9]/g,""));
+let t=document.getElementById("temaTitulo").value.trim();
+if(!t){alert("Escribe un tema");return;}
+let r="🔥 TÍTULOS PARA TU VÍDEO\n\n1. Lo que pocos saben sobre "+t+"\n2. ¿El mayor misterio de GTA 6?\n3. Esto podría cambiar tu forma de ver GTA 6\n4. Los detalles que no debes pasar por alto\n5. ¿Realidad o teoría? Descúbrelo\n\n#GTA6 #RockstarGames #GTAVI #Gaming #Videojuegos #GTA6News";
+mostrar("tituloResultado",r);
 }
 
 function noticias(){
 let n=document.getElementById("noticia").value.trim();
-if(!n){alert("Introduce los datos de la noticia.");return;}
-mostrar("📰 GUION DE NOTICIA\n\n🎯 TITULAR:\n"+n+"\n\n🎙️ INTRODUCCIÓN:\nHoy te contamos una noticia que merece atención.\n\n📌 DESARROLLO:\n"+n+"\n\n🔎 CONTEXTO:\nAñade aquí los antecedentes y datos confirmados.\n\n🎬 CIERRE:\nSeguiremos atentos a las novedades. ¿Qué opinas?\n\n⚠️ Verifica la fuente, la fecha y los hechos antes de publicar. Esta herramienta no consulta noticias en directo.");
+let f=document.getElementById("fuente").value.trim();
+if(!n){alert("Introduce una noticia");return;}
+let r="📰 GUION DE NOTICIA GTA 6\n\n📌 INFORMACIÓN RECIBIDA:\n"+n+"\n\n🎯 INTRODUCCIÓN:\nAtención, fans de GTA 6. Hay una información que merece la pena conocer.\n\n🎙️ DESARROLLO:\n"+n+"\n\n🔥 CIERRE:\n¿Qué te parece esta información? Déjame tu opinión en comentarios.\n\n🔎 FUENTE:\n"+(f||"Fuente pendiente de añadir")+"\n\n⚠️ Verifica la fecha, el origen y el contenido antes de publicar. No presentes rumores como anuncios oficiales.";
+mostrar("noticiaResultado",r);
 }
 
-function copiar(){
-let texto=document.getElementById("resultado").textContent;
-if(!texto.trim()){alert("No hay contenido para copiar.");return;}
-if(navigator.clipboard && window.isSecureContext){
-navigator.clipboard.writeText(texto).then(()=>alert("¡Contenido copiado!")).catch(()=>alternativa(texto));
-}else{alternativa(texto);}
+function prompts(){
+let s=document.getElementById("escena").value.trim();
+let f=document.getElementById("formato").value;
+if(!s){alert("Describe la escena");return;}
+let r="🎨 PROMPT VISUAL\n\nCrear una escena cinematográfica inspirada en el universo de GTA 6.\n\nESCENA: "+s+"\n\nESTILO: videojuego de mundo abierto, estética criminal contemporánea, iluminación cinematográfica, detalles realistas, colores vibrantes y composición profesional.\n\nFORMATO: "+f+"\n\nSin textos, sin marcas de agua, alta calidad visual.\n\nIMPORTANTE: imagen conceptual de fans, no imagen oficial del videojuego.";
+mostrar("promptResultado",r);
 }
-function alternativa(t){
-let a=document.createElement("textarea");
-a.value=t;document.body.appendChild(a);a.select();
-try{document.execCommand("copy");alert("¡Contenido copiado!");}
-catch(e){alert("Selecciona y copia el texto manualmente.");}
-a.remove();
+
+async function copiar(){
+let t=document.getElementById("resultado").textContent;
+try{
+await navigator.clipboard.writeText(t);
+alert("¡Texto copiado!");
+}catch(e){
+alert("Mantén pulsado el texto del resultado para copiarlo.");
 }
-function limpiar(){
-mostrar("Aquí aparecerá tu guion o contenido.");
 }
 </script>
 </body>
