@@ -112,7 +112,30 @@ footer{text-align:center;color:#888;font-size:12px;margin:25px}
 </div>
 
 <script>
-function mostrar(id,contenido){
+ function guionAvanzado(){
+let tema=document.getElementById("tema").value.trim();
+let duracion=document.getElementById("duracion").value;
+let estilo=document.getElementById("estilo").value;
+
+if(!tema){
+alert("Escribe el tema del vídeo");
+return;
+}
+
+let guion="🎬 GUION AVANZADO GTA 6\n\n";
+guion+="🎯 TEMA: "+tema+"\n";
+guion+="⏱️ DURACIÓN: "+duracion+"\n";
+guion+="🎭 ESTILO: "+estilo+"\n\n";
+guion+="🔥 GANCHO:\n¿Crees que conoces todos los secretos de GTA 6? Hoy vamos a descubrir algo que podría sorprenderte.\n\n";
+guion+="🎙️ DESARROLLO:\n"+tema+". Vamos a analizar las pistas, los detalles conocidos y las teorías de la comunidad. ¿Qué podría significar todo esto?\n\n";
+guion+="🚀 CIERRE:\n¿Qué opinas? Déjame tu teoría en los comentarios y sígueme para descubrir más novedades de GTA 6.\n\n";
+guion+="📌 NOTA: Comprueba los datos antes de publicar.";
+
+mostrar("guionResultado",guion);
+ } 
+  
+  
+  function mostrar(id,contenido){
 document.getElementById(id).textContent=contenido;
 document.getElementById("resultado").textContent=contenido;
 }
