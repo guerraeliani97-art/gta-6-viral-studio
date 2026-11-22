@@ -133,14 +133,49 @@ let r="💡 5 IDEAS PARA TU CANAL\n\n"+a.map((x,i)=>(i+1)+". "+x).join("\n\n")+"
 mostrar("ideasResultado",r);
 }
 
+
 function guion(){
 let t=document.getElementById("tema").value.trim();
 if(!t){alert("Escribe el tema del vídeo");return;}
+
 let d=document.getElementById("duracion").value;
 let e=document.getElementById("estilo").value;
-let r="🎬 GUION PARA SHORT\n\nTEMA: "+t+"\nESTILO: "+e+"\nDURACIÓN: "+d+"\n\n🎯 GANCHO:\n¿Crees que ya lo sabes todo sobre GTA 6? Hoy vamos a hablar de algo que merece tu atención: "+t+".\n\n🎙️ DESARROLLO:\nPrimero, vamos a conocer qué información existe sobre este tema. Después, descubriremos los detalles más interesantes y por qué están dando tanto que hablar entre los fans.\n\n🔥 CIERRE:\n¿Qué opinas tú? ¿Crees que hay algo más por descubrir? Déjamelo en comentarios y sígueme para más secretos de GTA 6.\n\n📝 IMPORTANTE:\nAñade datos concretos y comprobados antes de publicar. Este guion es una estructura creativa, no una fuente de información.";
+
+let gancho={
+"Intrigante":"Hay un detalle de GTA 6 que está despertando muchas preguntas entre los fans...",
+"Impactante":"¡Atención, fans de GTA 6! Este detalle podría cambiar lo que pensabas...",
+"Informativo":"Hoy te contamos lo que sabemos sobre un tema muy interesante de GTA 6...",
+"Misterioso":"En el universo de GTA 6 todavía hay preguntas que nadie ha podido resolver..."
+};
+
+let cierre="¿Tú qué opinas? ¿Habías pensado en este detalle? Déjame tu teoría en comentarios y sígueme para descubrir más secretos de GTA 6.";
+
+let desarrollo="En este vídeo vamos a investigar "+t+". Analizaremos los detalles conocidos, las pistas disponibles y las teorías que están comentando los fans. Pero recuerda: no todo lo que circula por Internet está confirmado. Hay que distinguir los anuncios oficiales de las especulaciones.";
+
+let duracion={
+"30 segundos":"Guion breve: ve directamente al detalle más interesante y termina con una pregunta.",
+"60 segundos":"Guion completo: presenta el tema, desarrolla dos detalles interesantes y termina con una pregunta.",
+"90 segundos":"Guion ampliado: introduce el misterio, desarrolla varias pistas, explica las teorías y termina invitando a debatir."
+};
+
+let r="🎬 GTA 6 VIRAL STUDIO 4.0\n\n";
+r+="TEMA: "+t+"\n";
+r+="ESTILO: "+e+"\n";
+r+="DURACIÓN: "+d+"\n\n";
+r+="🎯 GANCHO (PRIMEROS 3 SEGUNDOS):\n";
+r+=gancho[e]+"\n\n";
+r+="🎙️ DESARROLLO:\n";
+r+=desarrollo+"\n\n";
+r+="🔥 CIERRE:\n";
+r+=cierre+"\n\n";
+r+="⏱️ PLAN DE EDICIÓN:\n";
+r+=duracion[d]+"\n\n";
+r+="📝 RECOMENDACIÓN:\n";
+r+="Añade imágenes relacionadas con el tema, subtítulos grandes, cambios de plano y música de tensión. Comprueba los datos antes de publicar. Este guion es una base creativa, no una noticia verificada.";
+
 mostrar("guionResultado",r);
 }
+
 
 function titulos(){
 let t=document.getElementById("temaTitulo").value.trim();
